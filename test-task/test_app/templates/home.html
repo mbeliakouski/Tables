@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    <div class="fluid-container col-lg-10 col-lg-offset-1">
+        <div class="jumbotron col-lg-12">
+            <h2>Inroduction</h2>
+            <p> This project is based on Django framework with SQLite as datastore.
+                It's intended to <a href="{% url 'upload' %}">upload</a> csv
+                files. After uploading these files are parsed and stored into database.</p>
+            <br>
+            <hr>
+
+            <h2>Usage</h2>
+            <p>Before starting the server the following preparations should be done:</p>
+
+            <p style="padding-left: 25px">1. Create virtual environment and activate it:</p>
+            <p style="padding-left: 25px">2. Go to project folder and install requirements:</p>
+            <p style="padding-left: 45px"><code>pip install -r requirements.txt</code></p>
+
+            <br>
+            <p>Since internal sqlite database was initialized, just run the following command to start the server:
+            <p><code>python manage.py runserver &lt;host&gt;:&lt;port&gt;</code></p>
+            </p>
+            <br>
+            <hr>
+
+            <h2>Database schema</h2>
+            <p>images which shows database structure</p>
+            <br>
+            <hr>
+
+            <h2>Security</h2>
+        </div>
+    </div>
+{% endblock %}

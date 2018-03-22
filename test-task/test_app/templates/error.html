@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    <div class="fluid-container">
+        <div class="alert alert-danger col-lg-8 col-lg-offset-2" >
+            <h3><strong>Error!</strong> {{ message }}</h3>
+        </div>
+    </div>
+
+{% endblock %}

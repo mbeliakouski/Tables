@@ -1,0 +1,41 @@
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSV Uploader</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+
+    <meta charset="utf-8">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'home' %}">CSV Uploader</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="{% if nbar == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
+            <li class="{% if nbar == 'upload' %}active{% endif %}"><a href="{% url 'upload' %}">Upload File</a></li>
+            <li class="{% if nbar == 'posts' %}active{% endif %}"><a href="/posts">View</a></li>
+
+        </ul>
+    <ul class="nav navbar-nav navbar-right">
+         <li><a href="{% if not user.is_authenticated %}{% url 'login' %}{% else %}{% url 'logout' %}{% endif %}">
+                {% if not user.is_authenticated %}
+                    Log in
+                {% else %}
+                    Log out
+                {% endif %}
+            </a></li>
+    </ul>
+    </div>
+</nav>
+<div class="content-container">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

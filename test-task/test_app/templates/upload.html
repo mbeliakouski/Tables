@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <form method="post" enctype="multipart/form-data" role="form">
+                    <legend>Upload csv file</legend>
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% bootstrap_button "Upload" button_type="submit" button_class="btn-primary" %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

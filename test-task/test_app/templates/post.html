@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Month</th>
+                        <th scope="col">Pre-tax Amount</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for key, value in data %}
+                        <tr>
+                            <td class="col-md-6"> {{ key }}:</td>
+                            <td class="col-md-3"> {{ value.pre_tax }} </td>
+                            <td class="col-md-3"> {{ value.amount }} </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th>{{ pre_amount_total }}</th>
+                        <th>{{ amount_total }}</th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+{% endblock %}
